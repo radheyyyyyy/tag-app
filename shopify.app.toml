@@ -2,7 +2,7 @@
 
 client_id = "a9606c01b617e66f4d3708e249647638"
 name = "tag-app"
-application_url = "https://custom-app-0khl.onrender.com"
+application_url = "https://tag-app-y5r1.onrender.com"
 embedded = true
 
 [build]
@@ -24,7 +24,8 @@ api_version = "2026-04"
 scopes = "read_products, write_products, read_cart_transforms, write_cart_transforms"
 
 [auth]
-redirect_urls = [ "https://custom-app-0khl.onrender.com/api/auth" ]
+redirect_urls = [ "https://tag-app-y5r1.onrender.com/api/auth" ]
+
 
 [product.metafields.app.demo_info]
 type = "single_line_text_field"
