@@ -23,12 +23,12 @@ export const action = async ({ request }) => {
   `);
 
   const { data } = await res.json();
-  console.log(data)
   return {data};
 };
 
 export default function Activate() {
   const actionData = useActionData();
+  console.log(actionData)
     const submit=useSubmit();
   return (
     <s-page>
