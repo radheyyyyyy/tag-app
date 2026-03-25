@@ -1,8 +1,6 @@
-
 import { authenticate } from "../shopify.server";
 import { useActionData, useSubmit } from "react-router";
 
-// ✅ action handles POST — correct for mutations
 export const action = async ({ request }) => {
   const { admin } = await authenticate.admin(request);
 
@@ -23,18 +21,22 @@ export const action = async ({ request }) => {
   `);
 
   const { data } = await res.json();
-  return {data};
+  return { data };
 };
 
 export default function Activate() {
   const actionData = useActionData();
-  console.log(actionData)
-    const submit=useSubmit();
+  console.log(actionData);
+  const submit = useSubmit();
+
   return (
     <s-page>
-     
-        <s-button variant="primary" onClick={()=>{submit({method:'post'})}}>Activate Cart Transform</s-button>
-      {/* Shows response after submit */}
+      <s-button
+        variant="primary"
+        onClick={() => { submit(null, { method: 'post' }) }} // ✅ fixed
+      >
+        Activate Cart Transform
+      </s-button>
       {actionData && <pre>{JSON.stringify(actionData, null, 2)}</pre>}
     </s-page>
   );
